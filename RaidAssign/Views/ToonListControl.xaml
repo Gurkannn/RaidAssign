@@ -17,10 +17,12 @@
         <converters:ToonClassToBrush x:Key="ClassToBrush" />
     </UserControl.Resources>
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition />
         </Grid.RowDefinitions>
+        
         <!--Make different view selection(Tank,healer,dps) at top of control-->
         <StackPanel Margin="2,2" Orientation="Horizontal" HorizontalAlignment="Center">
             <!--Change to reusable style instead of COPYPASTE-->
@@ -52,9 +54,6 @@
                         </Setter>
                     </Style>
                 </Button.Style>
-                <!--<Button.Background>
-                        <ImageBrush ImageSource="/Icons/Healer_Icon.png"/>
-                    </Button.Background>-->
             </Button>
             <Button Margin="10,0,10,0">
                 <Button.Style>
@@ -84,9 +83,6 @@
                         </Setter>
                     </Style>
                 </Button.Style>
-                <!--<Button.Background>
-                        <ImageBrush ImageSource="/Icons/Tank_Icon.png"/>
-                    </Button.Background>-->
             </Button>
             <Button Margin="10,0,10,0">
                 <Button.Style>
@@ -116,11 +112,10 @@
                         </Setter>
                     </Style>
                 </Button.Style>
-                <!--<Button.Background>
-                        <ImageBrush ImageSource="/Icons/Dps_Icon.png"/>
-                    </Button.Background>-->
             </Button>
         </StackPanel>
+        
+        <!--List containing all available toons of a specific type(healer,tank,dps)-->
         <ItemsControl Grid.Row="1" ItemsSource="{Binding ActiveToonList}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
